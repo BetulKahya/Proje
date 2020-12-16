@@ -1,0 +1,32 @@
+library(readr)
+
+#Veri Okuma
+data <- read.csv(file.choose(),header = T)
+attach(data)
+names(data)
+data$death_event <- as.factor(data$death_event)
+
+
+#Chi Squared Test
+tab <- table(sex,death_event)
+chisq.test(tab,correct = T)
+tab <- table(smoking,death_event)
+chisq.test(tab,correct = T)
+tab <- table(diabetes,death_event)
+chisq.test(tab,correct = T)
+tab <- table(high_blood_pressure,death_event)
+chisq.test(tab,correct = T)
+tab <- table(anaemia,death_event)
+chisq.test(tab,correct = T)
+tab <- table(age,death_event)
+chisq.test(tab,correct = T)
+tab <- table(ejection_fraction,death_event)
+chisq.test(tab,correct = T)
+tab <- table(serum_sodium,death_event)
+chisq.test(tab,correct = T)
+tab <- table(serum_creatinine,death_event)
+chisq.test(tab,correct = T)
+tab <- table(platelets,death_event)
+chisq.test(tab,correct = T)
+tab <- table(creatinine_phosphokinase,death_event)
+chisq.test(tab,correct = T)
